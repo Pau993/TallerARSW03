@@ -10,4 +10,9 @@ Las clases responsables de este consumo son las clases Producer y Consumer, prin
 
 ![image](https://github.com/user-attachments/assets/97d87b3e-6549-4963-a4d2-004e147618e1)
 
-2
+2. Fragmento de codigo
+![image](https://github.com/user-attachments/assets/af6d5724-7311-4d2e-b366-01f37950d608)
+- Output
+![image](https://github.com/user-attachments/assets/50b85b4c-2d55-4a26-af86-2763c056f7d4)
+
+
