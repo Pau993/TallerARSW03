@@ -1,0 +1,17 @@
+2.
+
+Para la implementación indicada en el punto 1, podemos observar primero una lista llamada inmmmortalsPopulation, la cual almacena la población de inmortales, así mismo dentro del método run() se obtiene el próximo inmortal con el que peleará accediendo a la lista generada globalmente.
+
+3.
+Dentro del método fight(Immortal i2) se verifica si el otro inmortal tiene salud mayor a 0 y si esto es cierto reduce la salud del atacado y aumenta del atacante.
+
+Código en cuestión
+
+if (i2.getHealth() > 0) {
+            // Reducir la salud del otro inmortal y aumentar la propia
+            i2.changeHealth(i2.getHealth() - defaultDamageValue);
+            this.health += defaultDamageValue;
+
+4.
+El bucle infinito dentro del método run() asegura que los inmortales sigan peleando sin detenerse, lo que puede llevar a una situación en la que solo quedan peleando dos inmortales indefinidamente. 
+La regeneración de salud puede llevar a una situación en la que los inmortales no mueran fácilmente, prolongando las peleas indefinidamente.
