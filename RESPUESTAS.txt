@@ -1,3 +1,5 @@
+Parte III
+
 2.
 
 Para la implementación indicada en el punto 1, podemos observar primero una lista llamada inmmmortalsPopulation, la cual almacena la población de inmortales, así mismo dentro del método run() se obtiene el próximo inmortal con el que peleará accediendo a la lista generada globalmente.
@@ -15,3 +17,6 @@ if (i2.getHealth() > 0) {
 4.
 El bucle infinito dentro del método run() asegura que los inmortales sigan peleando sin detenerse, lo que puede llevar a una situación en la que solo quedan peleando dos inmortales indefinidamente. 
 La regeneración de salud puede llevar a una situación en la que los inmortales no mueran fácilmente, prolongando las peleas indefinidamente.
+
+La opción 'pause and check', pausa un segundo y revisa la cantidad de inmortales y su salud.
+
