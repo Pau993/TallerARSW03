@@ -32,6 +32,10 @@ Dentro de la aplicación encontraremos Immortals, los cuales van a pelear hasta 
 
 
 
+https://github.com/user-attachments/assets/63cec761-162a-4b62-bf94-39c7f395f405
+
+
+
 Se asignó la funcionalidad del botón 'Stop' y así mismo de 'Pause an check'
 
 ## Comenzando 🚀
