@@ -53,40 +53,39 @@ git checkout main
 mvn clean compile
 ```
 
-### Ejecutando la aplicación ⚙️
+## Características principales: Immortal⚙️
 
-Para abrir los archivos y ejecutarlo siga la siguiente instrucción.
-Dentro de main encontrará el archivo con el programa de primos y dentro de la rama Snake encontrará el programa del juego de la serpiendte
+1- Interfaz Gráfica de Usuario (GUI):
 
-https://github.com/user-attachments/assets/40c25085-cff8-4962-96df-861f5230b95c
+La aplicación utiliza JFrame para crear una ventana principal (ControlFrame).
+La ventana contiene un JToolBar con botones para controlar la simulación (Start, Pause and check, Resume, STOP).
+Hay un JTextArea para mostrar la salida de la simulación y un JLabel para mostrar estadísticas.
 
-Siguiendo las instrucciones podrá clonar el repositorio y ejecutar los programas satisfactoriamente.
+2- Control de Inmortales:
 
-## Características principales: ⚙️
+La aplicación permite configurar el número de inmortales a través de un campo de texto (numOfImmortals).
+Los inmortales se crean y se gestionan en una lista (immortals).
 
-1. Validación de Objetos Nulos
-Antes de realizar cualquier operación con objetos (como invocar métodos o acceder a propiedades),
-valida que estos no sean nulos. Esto es crucial cuando trabajas con arrays o colecciones que pueden contener
-referencias no inicializadas.
+3- Acciones de los Botones:
 
-2. Manejo de Excepciones
-Aunque no es ideal depender únicamente de excepciones,
-puedes incluir bloques try-catch para capturar y manejar errores inesperados.
+Start: Inicia la simulación creando y comenzando los hilos de los inmortales.
+Pause and check: Pausa la simulación y muestra la salud total de todos los inmortales.
+Resume: Reanuda la simulación después de una pausa.
+STOP: Detiene la simulación.
 
-3. Singleton Seguro (Para SnakeApp)
-Si estás utilizando el patrón Singleton para la clase SnakeApp, asegúrate de implementarlo
- correctamente para garantizar que siempre exista una instancia válida.
+4- Actualización de la Interfaz:
 
-4. Robustez y Control de Calidad
-Implementa pruebas y verificaciones para garantizar que los elementos clave del juego estén en un estado
-válido antes de comenzar el juego:
+La clase TextAreaUpdateReportCallback se utiliza para actualizar el JTextArea con los informes de los inmortales y desplazar automáticamente la barra de desplazamiento hacia abajo.
 
-Comprueba que todas las serpientes estén inicializadas.
-Verifica que el tablero tenga dimensiones correctas.
-Asegúrate de que los métodos del juego se ejecutan en el orden esperado.
-## Muestra de la aplicación 🧩
+5- Simulación de Inmortales:
 
-https://github.com/user-attachments/assets/c4e7d1fb-52b4-441c-9925-88ee582abb26
+Cada inmortal es un hilo (Immortal) que tiene atributos como salud (DEFAULT_IMMORTAL_HEALTH) y valor de daño (DEFAULT_DAMAGE_VALUE).
+Los inmortales interactúan entre sí, y sus estados se actualizan en la interfaz gráfica.
+
+6- Manejo de Errores:
+
+La aplicación maneja errores de formato de número al ingresar el número de inmortales y muestra un cuadro de diálogo en caso de error.
+
 
 ## Autores ✒️
 
