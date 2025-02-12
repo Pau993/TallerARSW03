@@ -20,3 +20,4 @@ La regeneración de salud puede llevar a una situación en la que los inmortales
 
 La opción 'pause and check', pausa un segundo y revisa la cantidad de inmortales y su salud.
 
+5. En nuestro caso el invariante se cumplía satosfactoriamene.
