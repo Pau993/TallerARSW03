@@ -14,13 +14,25 @@ Threads y sincronización con wait(), notify(), notifyAll(), lock().
 
 # Consumer And Producter
 
-Esta aplicación es una implementación del clásico juego de la serpiente, desarrollada en Java,
-con un enfoque en la simulación de movimiento autónomo y la interacción con diferentes elementos dentro de un tablero.
+Esta aplicación tiene como objetivo observar el rendimiento de la CPU teniendo en cuenta la velocidad de producción. 
 
-# Cálculo de primos
+![image](https://github.com/user-attachments/assets/a5d55de2-285a-404d-97f4-effdaa3ee8f7)
 
-Esta aplicación implementa la generación de números primos, contando cuántos números primos se crean en un período de 5 segundos. 
-Utiliza hilos para optimizar el proceso y completa la implementación de la funcionalidad.
+Al inicio podemos observar que el uso de cpu es de 8.5% así que vamos a cambiar esto para mejorar la eficiencia del programa. }
+
+![image](https://github.com/user-attachments/assets/6e3b019d-eaab-492b-8519-ab7b58010802)
+
+Se agregó un syncronized para asegurar que solo un hilo puede acceder a la cola a la vez.
+El producto espera lock.wait() hasta que el consumidor notifique que hay espacio disponible en la cola, lock.notifyAll().
+Esto evita que el productor siga intentando agregar elementos a la cola cuando ya está llena, lo que mejora la eficiencia del uso de la CPU.
+
+# Immortal
+
+Dentro de la aplicación encontraremos Immortals, los cuales van a pelear hasta que alguno pierda la vida totalmente. Por cada golpe realizado aumenta vida al atacando y disminuye al atacado.
+
+
+
+Se asignó la funcionalidad del botón 'Stop' y así mismo de 'Pause an check'
 
 ## Comenzando 🚀
 
@@ -35,8 +47,8 @@ Las siguientes instrucciones le permitirán obtener una copia del proyecto en fu
 Realice los siguientes pasos para clonar el proyecto en su máquina local.
 
 ```
-git clone https://github.com/Pau993/TallerARSW02.git
-cd TallerARSW02
+git clone https://github.com/Pau993/TallerARSW03.git
+cd TallerARSW03
 git checkout main
 mvn clean compile
 ```
