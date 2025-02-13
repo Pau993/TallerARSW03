@@ -1,6 +1,9 @@
 Ejercicio - Programación concurrente, condiciones de carrera y sincronización de hilos
 
 Parte I - Control de hilos con wait/notify (Productor/Consumidor)
+
+A qué se debe este consumo?, cual es la clase responsable?
+
 Consumo de CPU y clase responsable
 Al ejecutar el programa y monitorearlo con JVisualVM, se observa un alto consumo de CPU. 
 Esto se debe a que el hilo consumidor está en constante espera activa (busy-waiting), consumiendo recursos innecesariamente. La clase responsable del problema es la que implementa el consumidor. 
