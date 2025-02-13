@@ -1,0 +1,43 @@
+Ejercicio - Programación concurrente, condiciones de carrera y sincronización de hilos
+
+Parte I - Control de hilos con wait/notify (Productor/Consumidor)
+Consumo de CPU y clase responsable
+Al ejecutar el programa y monitorearlo con JVisualVM, se observa un alto consumo de CPU. 
+Esto se debe a que el hilo consumidor está en constante espera activa (busy-waiting), consumiendo recursos innecesariamente. La clase responsable del problema es la que implementa el consumidor. 
+
+Optimización del uso de CPU
+Para mejorar el uso eficiente de la CPU, se implementó el uso de wait() y notify() en la cola compartida entre productor y consumidor. 
+Ahora, el consumidor se suspende hasta que haya elementos disponibles, lo que reduce el consumo de CPU.
+
+Manejo de límite en la cola
+Se estableció un límite máximo para el stock en la cola. Cuando la cantidad de elementos alcanza este límite, el productor se suspende hasta que el consumidor retire elementos. 
+Se utilizó una estructura de datos que soporta la sincronización adecuada para este caso, como BlockingQueue de Java.
+
+Parte II - Sincronización y Condiciones de Carrera en el Buscador de Listas Negras
+Detención de la búsqueda cuando se alcanza el límite
+Se implementó un mecanismo que permite que los hilos terminen su ejecución tan pronto como se alcance el BLACK_LIST_ALARM_COUNT, deteniendo la búsqueda en listas negras adicionales.
+
+Evitación de condiciones de carrera
+Para evitar condiciones de carrera, se utilizó un AtomicInteger para llevar el conteo de coincidencias encontradas y un mecanismo de sincronización que asegura la correcta actualización de este valor entre los hilos en ejecución.
+
+Parte III - Simulador de Highlander
+Cálculo del invariante de vida
+Para N jugadores con un puntaje inicial de vida M, el invariante de la suma de los puntos de vida es N * M.
+
+Verificación de la opción 'Pause and Check'
+Al ejecutar la aplicación, se observó que el invariante no siempre se cumple debido a la modificación concurrente de la lista de jugadores mientras se consulta su estado.
+
+Corrección del problema de concurrencia
+Se implementó un mecanismo de sincronización para pausar todos los hilos antes de consultar el estado de los jugadores y garantizar que los valores obtenidos sean consistentes. Además, se añadió la opción resume para reanudar la simulación.
+
+Regiones críticas en la pelea de inmortales
+Para evitar condiciones de carrera en las peleas, se utilizó una estrategia de bloqueo sincronizado que asegura que un hilo no pueda atacar a otro si este ya está involucrado en otra pelea.
+
+Manejo de deadlocks
+Se identificó que la estrategia de bloqueo utilizada podría llevar a interbloqueos (deadlocks) cuando dos hilos intentaban bloquearse mutuamente. Se resolvió estableciendo un orden estricto en la adquisición de locks y verificando posibles ciclos de espera con jps y jstack.
+
+Eliminación de inmortales muertos
+Se implementó un mecanismo para eliminar a los inmortales muertos sin generar condiciones de carrera. Se evitó la sincronización global de la lista de jugadores, en su lugar, se usó una estrategia basada en CopyOnWriteArrayList para manejar la concurrencia eficientemente.
+
+Implementación de la opción STOP
+Se agregó una opción STOP que permite terminar la simulación de forma controlada, asegurando que todos los hilos finalicen correctamente sin inconsistencias en los datos.
