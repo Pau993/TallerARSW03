@@ -18,7 +18,9 @@ Esta aplicación tiene como objetivo observar el rendimiento de la CPU teniendo 
 
 ![image](https://github.com/user-attachments/assets/a5d55de2-285a-404d-97f4-effdaa3ee8f7)
 
-Al inicio podemos observar que el uso de cpu es de 8.5% así que vamos a cambiar esto para mejorar la eficiencia del programa. }
+Al inicio podemos observar que el uso de cpu es de 8.5% así que vamos a cambiar esto para mejorar la eficiencia del programa. 
+
+## Ajustes nevcesarios para una solución más eficiente.
 
 ![image](https://github.com/user-attachments/assets/6e3b019d-eaab-492b-8519-ab7b58010802)
 
